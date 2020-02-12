@@ -1,57 +1,22 @@
-# comments-main
+## API Routes for Comments Component
 
-The comments-section service for SoundClone
+- Create : Adds comment to database
+  - Type = POST
+  - Url = `page/:page_id/user/:user_id/comments`
+  - Data = {comment-text, songTimeStamp, postDate, parentCommentId}
+  
+- Read: Gets all comments for specific page
+  - Type = GET
+  - Url = `page/:page_id/comments`
 
-## Related Projects
+- Update: Updates a comment (when user edits)
+  - Type = PATCH 
+  - Url = `page/:page_id/comments/:comment_id`
+  - Data = {comment_text: newComment}
 
-  - https://github.com/SoundClone/BottomTopBar
-  - https://github.com/SoundClone/Main-Media-Player
-  - https://github.com/SoundClone/Post-Comments-and-Buttons
+- Delete: Remove comment/ all its replies
+  - Type = DELETE
+  - Url = `page/:page_id/comments/:comment_id`
 
-## Requirements
 
-- MongoDB 4.2.2 or later
-- NodeJS 8 or later
-- Brain
 
-## Usage
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-$ npm i
-```
-
-### Seeding database
-
-1. Start MongoDB shell session
-
-```sh
-$ mongo
-```
-2. Create the ```soundclone``` database
-
-```sh
-> use soundclone
-```
-
-You can now run the seed script in a new terminal with
-
-```sh
-$ npm run mongo-seed
-```
-
-### Run app
-
-Bundle files & start server
-
-```sh
-$ npm run react-prod
-$ npm run start
-```
-
-### Advice
-
-- When you're trying to read the code, don't worry about the CSS styling. Just don't worry about it. No touchy. It works, that's all you need to know. It's a mess, but it's _my_ mess.
