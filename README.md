@@ -3,7 +3,7 @@
 - Create : Adds comment to database
   - Type = POST
   - Url = `page/:page_id/comments`
-  - Data = {comment-text, songTimeStamp, postDate, parentCommentId}
+  - Data = {comment-text, songTimeStamp, postDate, parentCommentId, userId}
   
 - Read: Gets all comments for specific page
   - Type = GET
