@@ -2,7 +2,7 @@
 
 - Create : Adds comment to database
   - Type = POST
-  - Url = `page/:page_id/user/:user_id/comments`
+  - Url = `page/:page_id/comments`
   - Data = {comment-text, songTimeStamp, postDate, parentCommentId}
   
 - Read: Gets all comments for specific page
