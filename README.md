@@ -2,7 +2,7 @@
 
 - Create : Adds comment to database
   - Type = POST
-  - Url = `song/:id/comments`
+  - Url = `song/:id/comment`
   - Req.body = {comment-text, songTimeStamp, postDate, parentCommentId, userId}
   - Returns = None 
 - Read: Gets all comments for specific page
@@ -12,13 +12,13 @@
 
 - Update: Updates a comment (when user edits)
   - Type = PATCH 
-  - Url = `song/:id/comments/:comment_id`
+  - Url = `song/:id/comment/:comment_id`
   - Req.body = {comment_text: newComment}
   - Returns = None
 
 - Delete: Remove comment/ all its replies
   - Type = DELETE
-  - Url = `song/:id/comments/:comment_id`
+  - Url = `song/:id/comment/:comment_id`
   - Returns = None
 
 
