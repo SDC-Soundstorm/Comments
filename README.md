@@ -13,11 +13,12 @@
 - Update: Updates a comment (when user edits)
   - Type = PATCH 
   - Url = `song/:id/comment/:comment_id`
-  - Req.body = {comment_text: newComment}
+  - Req.body = {comment_text: newComment, userId}
   - Returns = None
 
 - Delete: Remove comment/ all its replies
   - Type = DELETE
+  - Req.body = {userId}
   - Url = `song/:id/comment/:comment_id`
   - Returns = None
 
