@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getComments();
+    // this.getComments();
   }
 
   getComments() {
