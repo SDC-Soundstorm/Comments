@@ -1,38 +1,11 @@
-// Setup
-const mongoose = require('mongoose');
+const { Pool, Client } = require('pg')
 
-// Connect to database
-mongoose.connect(
-  'mongodb://localhost:27017/soundclone',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const pool = new Pool({
+  user: 'postgres',
+  password: 'password',
+  host: '18.144.177.208',
+  database: 'comments',
+  port: 5432,
+})
 
-// Create schema
-const commentSchema = mongoose.Schema({
-  songId: Number,
-  comments: [
-    {
-      userData: {
-        username: String,
-        displayName: String,
-        profileURL: String,
-        profilePicture: String,
-        followCount: Number,
-      },
-      timeData: {
-        postDate: String,
-        timestamp: Number,
-      },
-      commentBody: String,
-    },
-  ],
-});
-
-// Compile the model from the schema
-const commentModel = mongoose.model('commentdocuments', commentSchema);
-
-// Export model
-module.exports = commentModel;
+module.exports = pool
