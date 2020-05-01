@@ -16,8 +16,7 @@ const getComments = (req, res) => {
       client.get(JSON.stringify(songId), function (err, reply) {
         res.send(JSON.parse(reply));
       });
-    }
-    else {
+    }else {
       console.log('doesn\'t exist');
       const query = {
         text: `SELECT * FROM comments WHERE song_id = $1`,
